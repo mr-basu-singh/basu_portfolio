@@ -6,13 +6,13 @@ import { profile, loaderExplore } from '../data/content';
 // so an incomplete images folder never blocks the loader indefinitely.
 const ASSET_URLS = [
   '/images/kai-face.webp',
-  '/images/basu-photo.png',
-  '/images/project-1.png',
-  '/images/project-2.png',
-  '/images/project-3.png',
-  '/images/project-4.png',
-  '/images/project-5.png',
-  '/images/project-6.png',
+  '/images/basu-photo-opt.webp',
+  '/images/project-1-opt.webp',
+  '/images/project-2-opt.webp',
+  '/images/project-3-opt.webp',
+  '/images/project-4-opt.webp',
+  '/images/project-5.webp',
+  '/images/project-6-opt.webp',
 ];
 
 function preloadImage(src) {
