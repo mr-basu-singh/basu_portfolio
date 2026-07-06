@@ -63,7 +63,7 @@ export default function Process() {
       <style>{`
         .process-track{
           position:relative; display:flex; align-items:center; justify-content:space-between;
-          max-width:1200px; margin:0 auto; width:100%; padding:100px 4px;
+          max-width:1200px; margin:0 auto; width:100%; padding:50px 4px;
         }
         .process-track-line{ position:absolute; left:0; right:0; top:50%; height:1.5px; background:var(--line); }
         .process-stop{ position:relative; display:flex; flex-direction:column; align-items:center; z-index:2; width:15%; min-width:150px; }
