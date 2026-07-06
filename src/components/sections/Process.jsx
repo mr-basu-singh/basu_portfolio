@@ -77,6 +77,11 @@ export default function Process() {
           aspect-ratio:1 / 1;
           transition:width .35s cubic-bezier(.16,.8,.24,1), aspect-ratio .1s, transform .4s ease, box-shadow .35s ease;
         }
+        .process-card.liquid-card{
+          background:rgba(15,16,20,0.62);
+          backdrop-filter:blur(22px) saturate(140%);
+          -webkit-backdrop-filter:blur(22px) saturate(140%);
+        }
         .process-card.open{
           aspect-ratio:auto; transform:translateY(-3px);
           width:min(260px, 78vw);

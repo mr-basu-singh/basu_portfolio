@@ -67,6 +67,11 @@ export default function Stats() {
           display:flex; flex-direction:column; align-items:center; justify-content:center;
           transition:transform .4s cubic-bezier(.16,.8,.24,1), border-color .4s ease, box-shadow .4s ease;
         }
+        .stats-card.liquid-card{
+          background:rgba(15,16,20,0.62);
+          backdrop-filter:blur(22px) saturate(140%);
+          -webkit-backdrop-filter:blur(22px) saturate(140%);
+        }
         .stats-card:hover{
           transform:translateY(-6px);
           border-color:var(--text-dim);
