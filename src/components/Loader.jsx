@@ -110,7 +110,7 @@ export default function Loader({ onDone }) {
       <div className="loader-content-col">
         <div className="loader-card">
           <div className="eyebrow loader-eyebrow"><span className="pulse-dot" />INITIALIZING AI AGENT</div>
-          <h1 className="loader-kai display">Hello, I'm Kai<span className="dot-accent">.</span></h1>
+          <p className="loader-kai display">Hello, I'm Kai<span className="dot-accent">.</span></p>
           <p className="loader-role">Your AI Portfolio Assistant</p>
           <p className="loader-p">
             Built to represent the work, projects, and skills of <span className="hl">{profile.fullName}</span> — an AI Agent Engineer.
