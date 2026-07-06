@@ -91,7 +91,18 @@ export default function Nav() {
 
           <div className="liquid-glass-content nav-content">
             <button className="nav-brand" onClick={() => handleLink('#hero')} aria-label="Go to top">
-              <span className="nav-mark">BS</span>
+              <span className="nav-mark">
+                <img
+                  src="/images/site-logo.png"
+                  alt="Basu Singh logo"
+                  className="nav-mark-img"
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none';
+                    e.currentTarget.nextSibling.style.display = 'flex';
+                  }}
+                />
+                <span className="nav-mark-fallback">BS</span>
+              </span>
               <span className="nav-brand-text">
                 <strong>{profile.name}</strong>
                 <small>{profile.title}</small>
@@ -190,9 +201,15 @@ export default function Nav() {
         .nav-mark{
           width:38px; height:38px; border-radius:12px;
           display:flex; align-items:center; justify-content:center;
+          flex-shrink:0; overflow:hidden; position:relative;
+        }
+        .nav-mark-img{ width:100%; height:100%; object-fit:cover; display:block; }
+        .nav-mark-fallback{
+          display:none; align-items:center; justify-content:center;
+          width:100%; height:100%;
           font-family:var(--font-display); font-weight:700; font-size:14px;
           background:linear-gradient(135deg, var(--accent), var(--accent-2));
-          color:var(--on-accent); flex-shrink:0;
+          color:var(--on-accent);
         }
         .nav-brand-text{ display:flex; flex-direction:column; line-height:1.25; }
         .nav-brand-text strong{ font-family:var(--font-display); font-size:15.5px; font-weight:600; color:var(--heading); }
