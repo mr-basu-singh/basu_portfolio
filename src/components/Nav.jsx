@@ -194,8 +194,8 @@ export default function Nav() {
       <style>{`
         .nav-wrap{
           position:fixed; top:0; left:0; right:0; z-index:200; pointer-events:none;
-          max-width:1080px; margin:0 auto;
-          padding:14px clamp(32px,9vw,90px);
+          max-width:1160px; margin:0 auto;
+          padding:14px clamp(24px,7vw,70px);
           transform:translateY(0); transition:transform .35s cubic-bezier(.16,.8,.24,1);
         }
         .nav-wrap.nav-hidden{ transform:translateY(-130%); }
