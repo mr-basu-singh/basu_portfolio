@@ -74,12 +74,13 @@ export default function Process() {
         .process-card{
           width:100%; border-radius:20px; padding:16px; cursor:pointer;
           display:flex; flex-direction:column; justify-content:flex-start;
-          aspect-ratio:1 / 1;
-          transition:width .35s cubic-bezier(.16,.8,.24,1), aspect-ratio .1s, transform .4s ease, box-shadow .35s ease;
+          height:180px; overflow:hidden;
+          transition:width .4s cubic-bezier(.16,.8,.24,1), height .4s cubic-bezier(.16,.8,.24,1), transform .4s ease, box-shadow .35s ease;
         }
         .process-card.open{
-          aspect-ratio:auto; transform:translateY(-3px);
-          width:min(260px, 78vw);
+          transform:translateY(-3px);
+          width:min(240px, 78vw);
+          height:min(560px, 70vh);
         }
         .process-card-head{ display:flex; align-items:center; gap:10px; }
         .process-icon{
@@ -113,8 +114,8 @@ export default function Process() {
           .process-track-line{ display:none; }
           .process-stop, .process-stop.down{ flex-direction:row; align-items:center; width:100%; margin:0 !important; gap:14px; }
           .process-node-dot{ display:none; }
-          .process-card{ aspect-ratio:auto; }
-          .process-card.open{ aspect-ratio:auto; }
+          .process-card{ width:100%; height:auto; min-height:110px; }
+          .process-card.open{ width:100%; height:auto; }
           .process-card-head h3{ -webkit-line-clamp:3; }
         }
       `}</style>
