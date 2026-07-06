@@ -4,18 +4,40 @@ import { navLinks, profile } from '../data/content';
 export default function Nav() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [hidden, setHidden] = useState(false);
   const [active, setActive] = useState('#hero');
   const [hoveredHref, setHoveredHref] = useState(null);
   const [pill, setPill] = useState({ left: 0, width: 0, ready: false });
   const linksWrapRef = useRef();
   const linkRefs = useRef({});
+  const lastScrollY = useRef(0);
 
+  // Hide the bar while scrolling down (once past the very top), reveal it again
+  // the moment the user scrolls up — a standard "auto-hiding nav" pattern.
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
+    lastScrollY.current = window.scrollY;
+    const onScroll = () => {
+      const y = window.scrollY;
+      setScrolled(y > 40);
+
+      if (y < 80) {
+        setHidden(false);
+      } else if (y > lastScrollY.current + 4) {
+        setHidden(true);
+      } else if (y < lastScrollY.current - 4) {
+        setHidden(false);
+      }
+      lastScrollY.current = y;
+    };
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
+
+  // Never stay hidden while the mobile menu is open.
+  useEffect(() => {
+    if (open) setHidden(false);
+  }, [open]);
 
   // Track which nav-linked section is currently in view using IntersectionObserver
   // (event-driven, not dependent on catching every scroll tick) — a thin band near
@@ -83,7 +105,7 @@ export default function Nav() {
 
   return (
     <>
-      <div className="nav-wrap">
+      <div className={`nav-wrap ${hidden ? 'nav-hidden' : ''}`}>
         <header className={`nav liquid-glass ${scrolled ? 'scrolled' : ''}`}>
           <div className="liquid-glass-filter" />
           <div className="liquid-glass-overlay" />
@@ -170,7 +192,11 @@ export default function Nav() {
       {open && <div className="nav-scrim" onClick={() => setOpen(false)} />}
 
       <style>{`
-        .nav-wrap{ position:fixed; top:0; left:0; right:0; z-index:200; padding:14px clamp(12px,3vw,28px); pointer-events:none; }
+        .nav-wrap{
+          position:fixed; top:0; left:0; right:0; z-index:200; padding:14px clamp(12px,3vw,28px); pointer-events:none;
+          transform:translateY(0); transition:transform .35s cubic-bezier(.16,.8,.24,1);
+        }
+        .nav-wrap.nav-hidden{ transform:translateY(-130%); }
         .nav{
           pointer-events:auto;
           border-radius:100px;
