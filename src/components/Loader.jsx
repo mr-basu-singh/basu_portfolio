@@ -1,54 +1,18 @@
 import { useEffect, useRef, useState } from 'react';
-import { profile, loaderExplore, heroContent } from '../data/content';
-
-function speakKaiIntro() {
-  try {
-    if (typeof window === 'undefined' || !('speechSynthesis' in window)) return;
-    const text = heroContent.kaiIntro;
-    const synth = window.speechSynthesis;
-
-    const doSpeak = () => {
-      synth.cancel(); // clear any queued/stuck utterance from a fast reload
-      const utter = new SpeechSynthesisUtterance(text);
-      const voices = synth.getVoices();
-      const preferred =
-        voices.find((v) => /en-US|en_GB|en-GB/.test(v.lang) && /Google|Natural|Samantha|Daniel/i.test(v.name)) ||
-        voices.find((v) => v.lang?.startsWith('en')) ||
-        voices[0];
-      if (preferred) utter.voice = preferred;
-      utter.rate = 1;
-      utter.pitch = 1;
-      utter.volume = 1;
-      synth.speak(utter);
-    };
-
-    if (synth.getVoices().length > 0) {
-      doSpeak();
-    } else {
-      const onVoices = () => {
-        doSpeak();
-        synth.removeEventListener('voiceschanged', onVoices);
-      };
-      synth.addEventListener('voiceschanged', onVoices);
-      setTimeout(doSpeak, 700);
-    }
-  } catch {
-    // speech synthesis unsupported/blocked — fail silently, never break the load
-  }
-}
+import { profile, loaderExplore } from '../data/content';
 
 // Every real asset the site needs visually settled before we consider it "ready" —
 // missing/not-yet-added project images resolve as failures rather than hanging,
 // so an incomplete images folder never blocks the loader indefinitely.
 const ASSET_URLS = [
   '/images/kai-face.webp',
-  '/images/basu-photo-opt.webp',
-  '/images/project-1-opt.webp',
-  '/images/project-2-opt.webp',
-  '/images/project-3-opt.webp',
-  '/images/project-4-opt.webp',
-  '/images/project-5.webp',
-  '/images/project-6-opt.webp',
+  '/images/basu-photo.png',
+  '/images/project-1.png',
+  '/images/project-2.png',
+  '/images/project-3.png',
+  '/images/project-4.png',
+  '/images/project-5.png',
+  '/images/project-6.png',
 ];
 
 function preloadImage(src) {
@@ -67,10 +31,6 @@ export default function Loader({ onDone }) {
   const [progress, setProgress] = useState(0);
   const [exiting, setExiting] = useState(false);
   const readyRef = useRef({ assets: false, minTime: false });
-
-  useEffect(() => {
-    speakKaiIntro();
-  }, []);
 
   // Real readiness: web fonts actually rendered + every image the site displays
   // has either loaded or definitively failed (not left pending).
