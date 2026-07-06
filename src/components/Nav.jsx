@@ -277,7 +277,10 @@ export default function Nav() {
 
         .nav-mobile{
           position:fixed; top:82px; right:14px; width:min(78vw, 300px); z-index:250;
-          border-radius:24px;
+          border-radius:24px; overflow:hidden;
+          background:rgba(10,11,15,0.96);
+          backdrop-filter:blur(28px) saturate(140%);
+          -webkit-backdrop-filter:blur(28px) saturate(140%);
           transform:translateY(-12px) scale(0.97); opacity:0; pointer-events:none;
           transition:transform .35s cubic-bezier(.16,.8,.24,1), opacity .3s ease;
           box-shadow:0 20px 60px rgba(21,23,30,0.18);
