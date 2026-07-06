@@ -4,6 +4,7 @@ import { profile, resumeDoc } from '../../data/content';
 import LiquidResumeButton from '../buttons/LiquidResumeButton';
 
 const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mdardlon';
+const RECAPTCHA_SITE_KEY = '6LcmO0ctAAAAAF4MtcdMHHqi_LI1mh7RBKS-QDfc';
 
 function ResumeDocument({ compact = false }) {
   return (
@@ -64,6 +65,16 @@ export default function ResumeContact() {
   const [previewOpen, setPreviewOpen] = useState(false);
   const [form, setForm] = useState({ name: '', email: '', message: '' });
   const [status, setStatus] = useState('idle');
+
+  // Load Google's reCAPTCHA v3 script once, scoped to this component's needs.
+  useEffect(() => {
+    if (document.querySelector('script[data-recaptcha]')) return;
+    const script = document.createElement('script');
+    script.src = `https://www.google.com/recaptcha/api.js?render=${RECAPTCHA_SITE_KEY}`;
+    script.async = true;
+    script.dataset.recaptcha = 'true';
+    document.head.appendChild(script);
+  }, []);
   useReveal(ref, []);
 
   useEffect(() => {
@@ -86,15 +97,28 @@ export default function ResumeContact() {
   const submit = async (e) => {
     e.preventDefault();
     if (!form.name.trim() || !form.email.trim() || !form.message.trim()) {
-      setStatus('error');
+      setStatus('empty');
       return;
     }
     setStatus('sending');
     try {
+      const token = await new Promise((resolve, reject) => {
+        if (!window.grecaptcha) {
+          reject(new Error('reCAPTCHA not loaded'));
+          return;
+        }
+        window.grecaptcha.ready(() => {
+          window.grecaptcha
+            .execute(RECAPTCHA_SITE_KEY, { action: 'submit' })
+            .then(resolve)
+            .catch(reject);
+        });
+      });
+
       const res = await fetch(FORMSPREE_ENDPOINT, {
         method: 'POST',
         headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
+        body: JSON.stringify({ ...form, 'g-recaptcha-response': token }),
       });
       if (res.ok) {
         setStatus('sent');
@@ -162,7 +186,8 @@ export default function ResumeContact() {
               {status === 'sending' ? 'Sending…' : 'Send Message'} <span aria-hidden>→</span>
             </button>
             {status === 'sent' && <p className="form-status ok">Message sent — I'll get back to you soon.</p>}
-            {status === 'error' && <p className="form-status bad">Something went wrong — please fill every field, or email me directly.</p>}
+            {status === 'empty' && <p className="form-status bad">Please fill in every field before sending.</p>}
+            {status === 'error' && <p className="form-status bad">Couldn't send that — please try again, or email me directly at {profile.email}.</p>}
           </form>
         </div>
       </div>
