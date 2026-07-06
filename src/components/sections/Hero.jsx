@@ -51,7 +51,7 @@ export default function Hero() {
       </div>
 
       <style>{`
-        .hero{ align-items:center; padding-top:var(--header-h); text-align:center; }
+        .hero{ min-height:100vh; align-items:center; padding-top:var(--header-h); text-align:center; }
         .hero-inner{
           max-width:900px;
           margin:0 auto;

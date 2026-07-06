@@ -34,13 +34,13 @@ export default function Stats() {
       </div>
 
       <style>{`
-        .stats-section{ min-height:auto; padding-top:60px; padding-bottom:60px; }
+        .section-shell.stats-section{ min-height:auto; padding-top:60px; padding-bottom:60px; }
         .stats-bridge{
           position:relative;
           display:grid;
           grid-template-columns:repeat(6, 1fr);
           column-gap:18px;
-          padding:100px 0;
+          padding:60px 0;
         }
         .bridge-line{
           position:absolute; left:0; right:0; top:50%; height:1px;

@@ -75,8 +75,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .section-shell{
   position:relative;
   z-index:2;
-  min-height:100vh;
-  padding:140px 8vw 100px;
+  min-height:auto;
+  padding:100px 8vw 80px;
   display:flex;
   flex-direction:column;
   justify-content:center;
@@ -202,14 +202,14 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .liquid-glass{ position:relative; isolation:isolate; }
 .liquid-glass-filter{
   position:absolute; inset:0; z-index:0;
-  backdrop-filter:blur(2px) saturate(120%);
-  -webkit-backdrop-filter:blur(2px) saturate(120%);
+  backdrop-filter:blur(20px) saturate(140%);
+  -webkit-backdrop-filter:blur(20px) saturate(140%);
   filter:url(#lg-dist);
   border-radius:inherit;
 }
 .liquid-glass-overlay{
   position:absolute; inset:0; z-index:1;
-  background:var(--glass-bg);
+  background:rgba(13,14,18,0.85);
   border-radius:inherit;
 }
 .liquid-glass-specular{
