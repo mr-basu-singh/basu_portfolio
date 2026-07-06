@@ -12,7 +12,8 @@ function ResumeDocument({ compact = false }) {
       <h2 className="resume-doc-name">{profile.fullName}</h2>
       <p className="resume-doc-contact">
         {profile.email} <span>•</span> {profile.phone} <span>•</span> {profile.location} <span>•</span>{' '}
-        {profile.linkedin.replace('https://www.', '')} <span>•</span> {profile.github.replace('https://', '')}
+        <a href={profile.linkedin} target="_blank" rel="noopener noreferrer">linkedin</a> <span>•</span>{' '}
+        <a href={profile.github} target="_blank" rel="noopener noreferrer">github</a>
       </p>
 
       <h3 className="resume-doc-h">Skills</h3>
@@ -41,19 +42,28 @@ function ResumeDocument({ compact = false }) {
             <div key={c.title} className="resume-doc-proj">
               <div className="resume-doc-proj-head">
                 <strong>{c.title}</strong>
-                <span>{c.date}</span>
               </div>
-              <p className="resume-doc-cert-desc">{c.desc}</p>
+              <ul>
+                <li>Date: {c.date}</li>
+                <li>{c.desc}</li>
+              </ul>
             </div>
           ))}
 
           <h3 className="resume-doc-h">Education</h3>
           {resumeDoc.education.map((e) => (
-            <p key={e.title} className="resume-doc-line">{e.range} — <strong>{e.title}</strong>, {e.place}</p>
+            <div key={e.title} className="resume-doc-proj resume-doc-edu">
+              <div className="resume-doc-proj-head">
+                <div><strong>{e.title}</strong>, <em>{e.place}</em></div>
+                <span>{e.range}</span>
+              </div>
+            </div>
           ))}
 
           <h3 className="resume-doc-h">Languages</h3>
-          <p className="resume-doc-line">{resumeDoc.languages.join(', ')}</p>
+          <ul>
+            {resumeDoc.languages.map((l) => <li key={l}>{l}</li>)}
+          </ul>
         </>
       )}
     </div>
@@ -261,6 +271,7 @@ export default function ResumeContact() {
         .resume-doc-name{ font-family:var(--font-display); font-size:17px; text-align:center; margin-bottom:4px; }
         .resume-doc-contact{ font-size:9px; text-align:center; color:#555; margin-bottom:12px; line-height:1.6; }
         .resume-doc-contact span{ margin:0 3px; }
+        .resume-doc-contact a{ color:#555; text-decoration:underline; }
         .resume-doc-h{ font-size:10.5px; text-transform:uppercase; letter-spacing:0.5px; border-bottom:1.5px solid #1a1a1a; padding-bottom:3px; margin:11px 0 7px; }
         .resume-doc-line{ font-size:9.5px; line-height:1.45; margin-bottom:5px; color:#333; }
         .resume-doc-proj{ margin-bottom:9px; }

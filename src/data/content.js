@@ -258,8 +258,8 @@ export const resumeDoc = {
   ],
   projects: [
     {
-      heading: 'Lead Developer | AI Resume Matching Agent | Python, LangChain, Groq (Llama 3.3 70B), FAISS, Streamlit | GitHub',
-      date: '03/2026 – 03/2026',
+      heading: 'AI Resume Matching Agent — Lead Developer | Python, LangChain, Groq (Llama 3.3 70B), FAISS, Streamlit | GitHub',
+      date: '03/2026',
       demo: 'Live Demo: AI Resume Matching Agent · Streamlit',
       bullets: [
         'Engineered a 5-agent LangGraph pipeline for automated resume screening, reducing recruiter manual review time by 70% through structured multi-agent orchestration.',
@@ -268,8 +268,8 @@ export const resumeDoc = {
       ],
     },
     {
-      heading: 'AI Career Mentor Agent | Python, LangGraph, LangChain, Groq, Tavily, Streamlit, ReportLab | GitHub',
-      date: '05/2026 – 05/2026',
+      heading: 'AI Career Mentor Agent | Python, LangGraph, LangChain, LLM APIs, Tavily, Streamlit, ReportLab | GitHub',
+      date: '05/2026',
       demo: 'Live Demo: AI Career Mentor Agent · Streamlit',
       bullets: [
         'Architected a 3-node LangGraph workflow that dynamically extracts top 10 in-demand skills for target roles, integrating Tavily Search API to provide real-time, verified documentation links for each skill.',
@@ -278,19 +278,19 @@ export const resumeDoc = {
       ],
     },
     {
-      heading: 'AIForge: AI Evaluation & Agent Testing Platform | Python, FastAPI, Streamlit, Groq API | GitHub',
-      date: '06/2026 – 06/2026',
-      demo: null,
+      heading: 'AIForge: AI Evaluation & Agent Testing Platform | GitHub',
+      date: '06/2026',
+      demo: 'Python, FastAPI, Streamlit, LLM APIs, Sentence Transformers, SQLAlchemy, Docker',
       bullets: [
-        'Engineered a full-stack benchmarking platform evaluating 4 LLMs (Llama 3.3, Llama 3.1, Gemma 2, Qwen QwQ) against custom datasets using Sentence Transformer similarity and LLM-as-a-Judge metrics.',
-        'Implemented a custom hallucination detection system with a 0.4 similarity threshold, identifying Llama 3.3 as the optimal high performance model (0.695 similarity / 7.4 judge score) while validating Llama 3.1 for 4.5× cost reduction in production.',
+        'Engineered a full-stack benchmarking platform evaluating 4 LLMs (Llama 3.3, Llama 3.1, Gemma 2, Qwen QwQ) against custom datasets, utilizing Sentence Transformer similarity and LLM-as-a-Judge metrics to optimize model selection for quality and cost-efficiency.',
+        'Implemented a custom hallucination detection system with a 0.4 similarity threshold, identifying Llama 3.3 as the optimal high-performance model (0.695 similarity / 7.4 judge score) while validating Llama 3.1 for 4.5× cost reduction in production.',
         'Developed 15 REST API endpoints via FastAPI with Swagger documentation, backed by a SQLite/SQLAlchemy experiment-tracking system and Docker Compose deployment, validated with a 12-test unit test suite.',
       ],
     },
   ],
   certifications: [
-    { title: 'Agentic AI with Python — Krish Naik (Udemy)', date: '28 May 2026', desc: 'Hands-on training in building AI agents and multi-agent systems using LangChain, LangGraph, RAG pipelines, Vectorless RAG, Model Context Protocol (MCP), Guardrails, and LLM integration.' },
-    { title: 'AI Agents: Intensive Vibe Coding Course — Google × Kaggle', date: 'July 2026', desc: "Completed Google's 5-Day AI Agents Intensive covering Google ADK, multi-agent systems, tool integration, memory & context engineering, agent evaluation, and AgentOps." },
+    { title: 'Agentic AI with Python — Krish Naik (Udemy)', date: '28 May 2026', desc: 'Hands-on training in building AI agents and multi-agent systems using LangChain, LangGraph, Hugging Face, RAG pipelines, Vectorless RAG, Model Context Protocol (MCP), Prompt Engineering, Guardrails, and LLM integration, with tools including OpenAI API, Groq API, Tavily API, LangSmith, and Postman.' },
+    { title: 'Google AI Agents: Intensive Vibe Coding Course (Google × Kaggle)', date: 'July 2026', desc: "Completed Google's 5-Day AI Agents Intensive covering Google ADK, multi-agent systems, tool integration, memory & context engineering, agent evaluation, AgentOps, and production-ready AI agent development." },
   ],
   education: [
     { range: '2022 – 2026', title: 'B.Tech — Electrical and Electronics Engineering', place: 'G.L. Bajaj Institute of Technology and Management' },
