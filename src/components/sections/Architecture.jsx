@@ -27,6 +27,7 @@ export default function ArchitectureSection() {
       </div>
 
       <style>{`
+        .section-shell.arch-section{ padding-top:40px; }
         .arch-wrap{ padding:20px; border-radius:20px; display:flex; justify-content:center; }
         .arch-image{ width:100%; max-width:560px; height:auto; display:block; border-radius:8px; margin:0 auto; }
       `}</style>
