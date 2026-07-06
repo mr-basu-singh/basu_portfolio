@@ -80,7 +80,7 @@ export default function Process() {
         .process-card.open{
           transform:translateY(-3px);
           width:min(240px, 78vw);
-          height:min(560px, 70vh);
+          height:min(320px, 55vh);
         }
         .process-card-head{ display:flex; align-items:center; gap:10px; }
         .process-icon{
