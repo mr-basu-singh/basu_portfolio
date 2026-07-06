@@ -212,7 +212,6 @@ export const process = [
   },
 ];
 
-
 export const certifications = [
   {
     title: 'Agentic AI with Python',
@@ -222,6 +221,15 @@ export const certifications = [
     skills: ['LangChain', 'LangGraph', 'RAG Pipelines', 'Vectorless RAG', 'MCP', 'Guardrails', 'LLM Integration'],
     tools: ['Groq API', 'Tavily API', 'LangSmith', 'Postman'],
     link: 'https://www.udemy.com/certificate/UC-062a0b20-ce9b-4a5d-b494-d68bd4c6ca8c/',
+  },
+  {
+    title: 'AI Agents: Intensive Vibe Coding Course',
+    issuer: 'Google × Kaggle',
+    date: 'July 2026',
+    desc: "Completed Google's 5-Day AI Agents Intensive covering Google ADK, multi-agent systems, tool integration, memory & context engineering, agent evaluation, and AgentOps.",
+    skills: ['Google ADK', 'Multi-Agent Systems', 'Tool Integration', 'Memory & Context Engineering', 'Agent Evaluation', 'AgentOps'],
+    tools: [],
+    link: null,
   },
 ];
 
@@ -241,9 +249,11 @@ export const loaderExplore = [
 export const resumeDoc = {
   skills: [
     { label: 'Programming Languages', value: 'Python' },
+    { label: 'AI & Agent Frameworks', value: 'LangChain, LangGraph, CrewAI (Learning), Google ADK' },
+    { label: 'LLMs & AI Technologies', value: 'Generative AI, Agentic AI, Multi-Agent Systems, LLM Integration, Prompt Engineering, Tool Calling, Reasoning Workflows, Guardrails, OpenAI API, Groq API' },
+    { label: 'RAG & Vector Databases', value: 'Retrieval-Augmented Generation (RAG), FAISS, ChromaDB, Embeddings, Sentence Transformers, Document Loaders, Text Splitters, Vector Databases, Tokenization' },
+    { label: 'Backend Development', value: 'FastAPI, REST APIs, SQLAlchemy' },
     { label: 'Developer Tools', value: 'Git, GitHub, VS Code, Cursor, Postman, Docker' },
-    { label: 'Libraries & Frameworks', value: 'LangChain, LangGraph, Multi-Agent Systems, Agent Orchestration, Tool Calling, Tavily Search API, EXA Search, Groq API, Llama 3.1 (8B), Llama 3.3 (70B), Prompt Engineering, RAG, LLM Integration, FAISS, ChromaDB, Document Loaders, Text Splitters, Embeddings, Sentence Transformers, SQLAlchemy, FastAPI' },
-    { label: 'Core Competencies', value: 'Agentic AI, Generative AI & LLMs, Vector Databases & RAG' },
     { label: 'AI Coding Assistants', value: 'Claude Code' },
   ],
   projects: [
@@ -263,7 +273,7 @@ export const resumeDoc = {
       demo: 'Live Demo: AI Career Mentor Agent · Streamlit',
       bullets: [
         'Architected a 3-node LangGraph workflow that dynamically extracts top 10 in-demand skills for target roles, integrating Tavily Search API to provide real-time, verified documentation links for each skill.',
-        'Developed a structured roadmap generation engine that synthesizes role-specific learning paths, pro tips, and completion timelines.',
+        'Developed a structured roadmap generation engine that synthesizes role-specific learning paths, pro tips, and completion timelines, increasing user engagement by providing actionable, personalized career guidance.',
         'Automated the generation of branded, downloadable career roadmaps using ReportLab, reducing manual document creation time by 90%.',
       ],
     },
@@ -273,13 +283,14 @@ export const resumeDoc = {
       demo: null,
       bullets: [
         'Engineered a full-stack benchmarking platform evaluating 4 LLMs (Llama 3.3, Llama 3.1, Gemma 2, Qwen QwQ) against custom datasets using Sentence Transformer similarity and LLM-as-a-Judge metrics.',
-        'Implemented a custom hallucination detection system with a 0.4 similarity threshold, identifying Llama 3.3 as the optimal high-performance model while validating Llama 3.1 for 4.5× cost reduction.',
-        'Developed 15 REST API endpoints via FastAPI with Swagger documentation, backed by a SQLite/SQLAlchemy experiment-tracking system and Docker Compose deployment.',
+        'Implemented a custom hallucination detection system with a 0.4 similarity threshold, identifying Llama 3.3 as the optimal high performance model (0.695 similarity / 7.4 judge score) while validating Llama 3.1 for 4.5× cost reduction in production.',
+        'Developed 15 REST API endpoints via FastAPI with Swagger documentation, backed by a SQLite/SQLAlchemy experiment-tracking system and Docker Compose deployment, validated with a 12-test unit test suite.',
       ],
     },
   ],
   certifications: [
     { title: 'Agentic AI with Python — Krish Naik (Udemy)', date: '28 May 2026', desc: 'Hands-on training in building AI agents and multi-agent systems using LangChain, LangGraph, RAG pipelines, Vectorless RAG, Model Context Protocol (MCP), Guardrails, and LLM integration.' },
+    { title: 'AI Agents: Intensive Vibe Coding Course — Google × Kaggle', date: 'July 2026', desc: "Completed Google's 5-Day AI Agents Intensive covering Google ADK, multi-agent systems, tool integration, memory & context engineering, agent evaluation, and AgentOps." },
   ],
   education: [
     { range: '2022 – 2026', title: 'B.Tech — Electrical and Electronics Engineering', place: 'G.L. Bajaj Institute of Technology and Management' },

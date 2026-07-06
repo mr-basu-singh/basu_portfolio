@@ -32,13 +32,17 @@ export default function Certifications() {
                 <span className="cert-row-label mono">Skills covered</span>
                 <div className="cert-chips">{c.skills.map((s) => <span key={s} className="chip">{s}</span>)}</div>
               </div>
-              <div className="cert-row">
-                <span className="cert-row-label mono">Tools used</span>
-                <div className="cert-chips">{c.tools.map((s) => <span key={s} className="chip">{s}</span>)}</div>
-              </div>
-              <a href={c.link} target="_blank" rel="noopener noreferrer" className="btn ghost cert-btn">
-                View Certificate ↗
-              </a>
+              {c.tools.length > 0 && (
+                <div className="cert-row">
+                  <span className="cert-row-label mono">Tools used</span>
+                  <div className="cert-chips">{c.tools.map((s) => <span key={s} className="chip">{s}</span>)}</div>
+                </div>
+              )}
+              {c.link && (
+                <a href={c.link} target="_blank" rel="noopener noreferrer" className="btn ghost cert-btn">
+                  View Certificate ↗
+                </a>
+              )}
             </div>
           </div>
         ))}

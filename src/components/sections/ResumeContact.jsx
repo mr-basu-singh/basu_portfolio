@@ -37,7 +37,13 @@ function ResumeDocument({ compact = false }) {
         <>
           <h3 className="resume-doc-h">Certifications & Training</h3>
           {resumeDoc.certifications.map((c) => (
-            <p key={c.title} className="resume-doc-line"><strong>{c.title}</strong> · {c.date}<br />{c.desc}</p>
+            <div key={c.title} className="resume-doc-proj">
+              <div className="resume-doc-proj-head">
+                <strong>{c.title}</strong>
+                <span>{c.date}</span>
+              </div>
+              <p className="resume-doc-cert-desc">{c.desc}</p>
+            </div>
           ))}
 
           <h3 className="resume-doc-h">Education</h3>
@@ -236,6 +242,7 @@ export default function ResumeContact() {
         .resume-doc-proj-head{ display:flex; justify-content:space-between; gap:10px; font-size:9.5px; margin-bottom:2px; }
         .resume-doc-proj-head span{ white-space:nowrap; color:#666; font-size:8.5px; }
         .resume-doc-demo{ font-size:8.5px; color:var(--accent-2); margin-bottom:2px; }
+        .resume-doc-cert-desc{ font-size:9.5px; line-height:1.4; color:#333; }
         .resume-doc ul{ margin:0; padding-left:14px; }
         .resume-doc li{ font-size:9.5px; line-height:1.4; color:#333; margin-bottom:2px; }
 
