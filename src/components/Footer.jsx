@@ -15,7 +15,7 @@ const icons = {
 export default function Footer() {
   const year = new Date().getFullYear();
   return (
-    <footer className="site-footer liquid-glass">
+    <footer className="site-footer liquid-glass chamfer">
       <div className="liquid-glass-filter" />
       <div className="liquid-glass-overlay" />
       <div className="liquid-glass-specular" />
@@ -44,16 +44,12 @@ export default function Footer() {
         .site-footer{
           position:relative; z-index:2;
           margin:0 clamp(12px,3vw,28px) 16px;
-          border-radius:28px;
-          box-shadow:
-            0 1px 0 rgba(255,255,255,0.12) inset,
-            0 -1px 0 rgba(0,0,0,0.3) inset,
-            0 16px 44px rgba(0,0,0,0.4);
-        }
-        .site-footer::before{
-          content:''; position:absolute; top:0; left:6%; right:6%; height:1px; z-index:4;
-          background:linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-          pointer-events:none;
+          padding:2px;
+          background:linear-gradient(135deg, rgba(229,209,178,0.9), rgba(245,226,198,0.45) 50%, rgba(229,209,178,0.9));
+          clip-path: polygon(22px 0, calc(100% - 22px) 0, 100% 22px, 100% calc(100% - 22px), calc(100% - 22px) 100%, 22px 100%, 0 calc(100% - 22px), 0 22px);
+          filter:
+            drop-shadow(0 0 14px rgba(229,209,178,0.18))
+            drop-shadow(0 16px 44px rgba(0,0,0,0.4));
         }
         .foot-inner{
           display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:20px;

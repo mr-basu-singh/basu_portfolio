@@ -106,7 +106,7 @@ export default function Nav() {
   return (
     <>
       <div className={`nav-wrap ${hidden ? 'nav-hidden' : ''}`}>
-        <header className={`nav liquid-glass ${scrolled ? 'scrolled' : ''}`}>
+        <header className={`nav liquid-glass chamfer ${scrolled ? 'scrolled' : ''}`}>
           <div className="liquid-glass-filter" />
           <div className="liquid-glass-overlay" />
           <div className="liquid-glass-specular" />
@@ -169,7 +169,7 @@ export default function Nav() {
         </header>
       </div>
 
-      <div className={`nav-mobile liquid-glass ${open ? 'open' : ''}`}>
+      <div className={`nav-mobile liquid-glass chamfer ${open ? 'open' : ''}`}>
         <div className="liquid-glass-filter" />
         <div className="liquid-glass-overlay" />
         <div className="liquid-glass-specular" />
@@ -201,25 +201,18 @@ export default function Nav() {
         .nav-wrap.nav-hidden{ transform:translateY(-130%); }
         .nav{
           pointer-events:auto;
-          border-radius:100px;
-          transition:border-radius .4s ease, box-shadow .4s ease, transform .3s ease;
-          box-shadow:
-            0 1px 0 rgba(255,255,255,0.14) inset,
-            0 -1px 0 rgba(0,0,0,0.3) inset,
-            0 20px 50px rgba(0,0,0,0.45),
-            0 2px 8px rgba(0,0,0,0.3);
-        }
-        .nav::before{
-          content:''; position:absolute; top:0; left:8%; right:8%; height:1px; z-index:4;
-          background:linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent);
-          border-radius:100px; pointer-events:none;
+          padding:2px;
+          background:linear-gradient(135deg, rgba(229,209,178,0.9), rgba(245,226,198,0.45) 50%, rgba(229,209,178,0.9));
+          clip-path: polygon(22px 0, calc(100% - 22px) 0, 100% 22px, 100% calc(100% - 22px), calc(100% - 22px) 100%, 22px 100%, 0 calc(100% - 22px), 0 22px);
+          filter:
+            drop-shadow(0 0 16px rgba(229,209,178,0.22))
+            drop-shadow(0 20px 50px rgba(0,0,0,0.45));
+          transition: filter .4s ease, transform .3s ease;
         }
         .nav.scrolled{
-          box-shadow:
-            0 1px 0 rgba(255,255,255,0.16) inset,
-            0 -1px 0 rgba(0,0,0,0.35) inset,
-            0 24px 60px rgba(0,0,0,0.5),
-            0 2px 10px rgba(0,0,0,0.35);
+          filter:
+            drop-shadow(0 0 22px rgba(229,209,178,0.3))
+            drop-shadow(0 24px 60px rgba(0,0,0,0.5));
         }
         .nav-content{
           display:flex; align-items:center; justify-content:space-between;
@@ -277,14 +270,17 @@ export default function Nav() {
 
         .nav-mobile{
           position:fixed; top:82px; right:14px; width:min(78vw, 300px); z-index:250;
-          border-radius:24px; overflow:hidden;
-          background:rgba(10,11,15,0.96);
-          backdrop-filter:blur(28px) saturate(140%);
-          -webkit-backdrop-filter:blur(28px) saturate(140%);
+          padding:2px;
+          background:linear-gradient(135deg, rgba(229,209,178,0.9), rgba(245,226,198,0.45) 50%, rgba(229,209,178,0.9));
+          clip-path: polygon(22px 0, calc(100% - 22px) 0, 100% 22px, 100% calc(100% - 22px), calc(100% - 22px) 100%, 22px 100%, 0 calc(100% - 22px), 0 22px);
           transform:translateY(-12px) scale(0.97); opacity:0; pointer-events:none;
           transition:transform .35s cubic-bezier(.16,.8,.24,1), opacity .3s ease;
-          box-shadow:0 20px 60px rgba(21,23,30,0.18);
+          filter:
+            drop-shadow(0 0 16px rgba(229,209,178,0.2))
+            drop-shadow(0 20px 60px rgba(0,0,0,0.45));
         }
+        .nav-mobile .liquid-glass-overlay{ background:rgba(10,11,15,0.96); }
+        .nav-mobile .liquid-glass-filter{ backdrop-filter:blur(28px) saturate(140%); -webkit-backdrop-filter:blur(28px) saturate(140%); }
         .nav-mobile.open{ transform:translateY(0) scale(1); opacity:1; pointer-events:auto; }
         .nav-mobile nav{ display:flex; flex-direction:column; gap:18px; padding:24px; }
         .nav-mobile nav a{
