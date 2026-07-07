@@ -176,7 +176,7 @@ export default function ResumeContact() {
 
         <div id="contact" className="rc-panel liquid-card reveal d2">
           <h3 className="display">Let's Build AI Systems Together</h3>
-          <p className="contact-sub">Open to full-time roles and exciting opportunities.</p>
+          <p className="contact-sub">Open to full-time and internship AI Agent Engineer roles, and exciting opportunities.</p>
 
           <div className="contact-info">
             <span>{profile.location}</span>
