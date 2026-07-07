@@ -14,9 +14,14 @@ export default function Nav() {
 
   // Hide the bar while scrolling down (once past the very top), reveal it again
   // the moment the user scrolls up — a standard "auto-hiding nav" pattern.
+  // requestAnimationFrame-gated so state updates happen at most once per
+  // frame, no matter how many raw scroll events the browser fires.
   useEffect(() => {
+    let rafId = null;
     lastScrollY.current = window.scrollY;
-    const onScroll = () => {
+
+    const update = () => {
+      rafId = null;
       const y = window.scrollY;
       setScrolled(y > 40);
 
@@ -29,9 +34,17 @@ export default function Nav() {
       }
       lastScrollY.current = y;
     };
-    onScroll();
+
+    const onScroll = () => {
+      if (rafId === null) rafId = requestAnimationFrame(update);
+    };
+
+    update();
     window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
+    return () => {
+      if (rafId !== null) cancelAnimationFrame(rafId);
+      window.removeEventListener('scroll', onScroll);
+    };
   }, []);
 
   // Never stay hidden while the mobile menu is open.

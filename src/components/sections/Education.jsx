@@ -16,20 +16,30 @@ export default function Education() {
   const cardRefs = useRef([]);
 
   useEffect(() => {
-    const onScroll = () => {
+    let rafId = null;
+
+    // All layout reads happen first, then all style writes — avoids the
+    // read/write/read/write interleaving that forces the browser to
+    // recalculate layout multiple times per frame ("layout thrashing").
+    // Wrapping in requestAnimationFrame also caps this to once per frame,
+    // no matter how many raw scroll events fire in between.
+    const update = () => {
+      rafId = null;
       if (!trackRef.current) return;
       const vh = window.innerHeight;
       const trigger = vh * 0.8;
 
       const trackRect = trackRef.current.getBoundingClientRect();
+      const cardRects = cardRefs.current.map((el) => (el ? el.getBoundingClientRect() : null));
+
       const trackProgress = clamp((trigger - trackRect.top) / trackRect.height, 0, 1);
       if (lineRef.current) {
         lineRef.current.style.transform = `scaleY(${trackProgress})`;
       }
 
-      cardRefs.current.forEach((el, i) => {
-        if (!el) return;
-        const r = el.getBoundingClientRect();
+      cardRects.forEach((r, i) => {
+        const el = cardRefs.current[i];
+        if (!el || !r) return;
         const elCenter = r.top + r.height / 2;
         const raw = (trigger - elCenter) / (vh * 0.35) + 0.5;
         const p = clamp(raw, 0, 1);
@@ -40,12 +50,19 @@ export default function Education() {
       });
     };
 
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
-    window.addEventListener('resize', onScroll);
+    const onScrollOrResize = () => {
+      if (rafId === null) {
+        rafId = requestAnimationFrame(update);
+      }
+    };
+
+    update();
+    window.addEventListener('scroll', onScrollOrResize, { passive: true });
+    window.addEventListener('resize', onScrollOrResize);
     return () => {
-      window.removeEventListener('scroll', onScroll);
-      window.removeEventListener('resize', onScroll);
+      if (rafId !== null) cancelAnimationFrame(rafId);
+      window.removeEventListener('scroll', onScrollOrResize);
+      window.removeEventListener('resize', onScrollOrResize);
     };
   }, []);
 
