@@ -132,6 +132,11 @@ export default function ResumeContact() {
       });
       if (res.ok) {
         setStatus('sent');
+        fetch('/api/notify', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name: form.name, email: form.email }),
+        }).catch(() => {});
         setForm({ name: '', email: '', message: '' });
       } else {
         setStatus('error');
