@@ -37,7 +37,7 @@ export const about = {
   eyebrow: 'origin node',
   title: 'About Me',
   paragraphs: [
-    "I'm an AI Agent Engineer who builds systems that reason, decide, and act — not just respond.",
+    "I'm an AI Agent Engineer — also called an Agentic AI Developer — who builds systems that reason, decide, and act — not just respond.",
     'I design multi-agent pipelines where several agents work together in a coordinated, step-by-step process — each handling a specific part of a larger decision, passing context forward, until the system produces an output a human would otherwise have to generate manually.',
     "What I care about most is making sure an autonomous agent can be trusted to make the right call, not just generate a plausible-sounding one — the difference between a demo and something you'd actually put into production.",
     "I'm a fresher, applying my hands-on experience in agent orchestration to real-world roles where autonomous systems can take real workload off real people.",
