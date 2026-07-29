@@ -11,6 +11,7 @@ export const profile = {
   linkedin: 'https://www.linkedin.com/in/kumar-basu-singh/',
   resumeFile: '/docs/Kumar_Basu_Singh_Resume.pdf',
   resumeDownloadName: "Kumar Basu Singh's Resume.pdf",
+  website: 'basusingh.vercel.app',
 };
 
 export const heroContent = {
@@ -68,7 +69,7 @@ export const expertise = [
   {
     key: 'tools',
     title: 'Dev Tools',
-    items: ['Git', 'GitHub', 'VS Code', 'Cursor', 'Claude Code', 'Docker', 'Postman', 'FastAPI'],
+    items: ['Git', 'GitHub', 'VS Code', 'Cursor', 'Claude Code', 'Docker', 'Postman'],
   },
 ];
 
@@ -249,10 +250,9 @@ export const loaderExplore = [
 export const resumeDoc = {
   skills: [
     { label: 'Programming Languages', value: 'Python' },
-    { label: 'AI & Agent Frameworks', value: 'LangChain, LangGraph, CrewAI (Learning), Google ADK' },
+    { label: 'AI & Agent Frameworks', value: 'LangChain, LangGraph, Google ADK, CrewAI (Learning)' },
     { label: 'LLMs & AI Technologies', value: 'Generative AI, Agentic AI, Multi-Agent Systems, LLM Integration, Prompt Engineering, Tool Calling, Reasoning Workflows, Guardrails, OpenAI API, Groq API' },
     { label: 'RAG & Vector Databases', value: 'Retrieval-Augmented Generation (RAG), FAISS, ChromaDB, Embeddings, Sentence Transformers, Document Loaders, Text Splitters, Vector Databases, Tokenization' },
-    { label: 'Backend Development', value: 'FastAPI, REST APIs, SQLAlchemy' },
     { label: 'Developer Tools', value: 'Git, GitHub, VS Code, Cursor, Postman, Docker' },
     { label: 'AI Coding Assistants', value: 'Claude Code' },
   ],

@@ -13,7 +13,8 @@ function ResumeDocument({ compact = false }) {
       <p className="resume-doc-contact">
         {profile.email} <span>•</span> {profile.phone} <span>•</span> {profile.location} <span>•</span>{' '}
         <a href={profile.linkedin} target="_blank" rel="noopener noreferrer">linkedin</a> <span>•</span>{' '}
-        <a href={profile.github} target="_blank" rel="noopener noreferrer">github</a>
+        <a href={profile.github} target="_blank" rel="noopener noreferrer">github</a> <span>•</span>{' '}
+        <a href={`https://${profile.website}`} target="_blank" rel="noopener noreferrer">{profile.website}</a>
       </p>
 
       <h3 className="resume-doc-h">Skills</h3>
