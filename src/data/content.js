@@ -230,7 +230,7 @@ export const certifications = [
     desc: "Completed Google's 5-Day AI Agents Intensive covering Google ADK, multi-agent systems, tool integration, memory & context engineering, agent evaluation, AgentOps, and production-ready AI agent development.",
     skills: ['Google ADK', 'Multi-Agent Systems', 'Tool Integration', 'Memory & Context Engineering', 'Agent Evaluation', 'AgentOps'],
     tools: [],
-    link: null,
+    link: 'https://www.kaggle.com/certification/badges/kumarbasusingh/108',
   },
 ];
 
@@ -259,7 +259,6 @@ export const resumeDoc = {
   projects: [
     {
       heading: 'AI Resume Matching Agent — Lead Developer | Python, LangChain, Groq (Llama 3.3 70B), FAISS, Streamlit | GitHub',
-      date: '03/2026',
       demo: 'Live Demo: AI Resume Matching Agent · Streamlit',
       bullets: [
         'Engineered a 5-agent LangGraph pipeline for automated resume screening, reducing recruiter manual review time by 70% through structured multi-agent orchestration.',
@@ -269,7 +268,6 @@ export const resumeDoc = {
     },
     {
       heading: 'AI Career Mentor Agent | Python, LangGraph, LangChain, LLM APIs, Tavily, Streamlit, ReportLab | GitHub',
-      date: '05/2026',
       demo: 'Live Demo: AI Career Mentor Agent · Streamlit',
       bullets: [
         'Architected a 3-node LangGraph workflow that dynamically extracts top 10 in-demand skills for target roles, integrating Tavily Search API to provide real-time, verified documentation links for each skill.',
@@ -279,7 +277,6 @@ export const resumeDoc = {
     },
     {
       heading: 'AIForge: AI Evaluation & Agent Testing Platform | GitHub',
-      date: '06/2026',
       demo: 'Python, FastAPI, Streamlit, LLM APIs, Sentence Transformers, SQLAlchemy, Docker',
       bullets: [
         'Engineered a full-stack benchmarking platform evaluating 4 LLMs (Llama 3.3, Llama 3.1, Gemma 2, Qwen QwQ) against custom datasets, utilizing Sentence Transformer similarity and LLM-as-a-Judge metrics to optimize model selection for quality and cost-efficiency.',

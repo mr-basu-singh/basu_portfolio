@@ -27,7 +27,6 @@ function ResumeDocument({ compact = false }) {
         <div key={p.heading} className="resume-doc-proj">
           <div className="resume-doc-proj-head">
             <strong>{p.heading}</strong>
-            <span>{p.date}</span>
           </div>
           {p.demo && <p className="resume-doc-demo">{p.demo}</p>}
           <ul>
