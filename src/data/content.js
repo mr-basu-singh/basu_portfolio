@@ -85,10 +85,11 @@ export const freelanceWork = [
     tools: ['Claude Code', 'Cowork', 'Claude Design', 'MCP', 'Three.js', 'Vercel'],
     link: 'https://mehfilcafe.vercel.app/',
     image: '/images/mehfil-cafe.webp',
-    desc: "Owned end-to-end delivery of a scroll-driven 3D cafe website for a Delhi client — from product spec and AI-designed 3D furniture to a shipped, SEO-optimized site, directing Claude Code and Cowork through the full build.",
+    desc: "Owned end-to-end delivery of a scroll-driven 3D cafe website for a Delhi client, directing Claude Code and Cowork through the full build.",
     highlights: [
+      'Authored the product spec and camera-narrative design, chose the deployment stack, and orchestrated Claude Code + Cowork through multi-turn iteration to a shipped, SEO-optimized product.',
       'Designed the 3D interior — furniture, lighting, and textures — and directed Claude Code to build it in Three.js for a photoreal cafe feel.',
-      'Cut mobile load time from ~4s to ~2s and fixed a GPU-memory crash by optimizing assets for real devices.',
+      'Curated a project-specific AI toolchain and cut mobile load time from ~4s to ~2s while fixing a GPU-memory crash by optimizing assets for real devices.',
     ],
   },
 ];
@@ -323,6 +324,7 @@ export const navLinks = [
   { label: 'Home', href: '#hero' },
   { label: 'About', href: '#about' },
   { label: 'Skills', href: '#expertise' },
+  { label: 'Work', href: '#freelance' },
   { label: 'Projects', href: '#projects' },
   { label: 'Workflow', href: '#process' },
   { label: 'Education', href: '#education' },

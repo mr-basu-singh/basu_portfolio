@@ -53,9 +53,20 @@ export default function FreelanceWork() {
         .freelance-highlights li{ font-size:13.5px; color:var(--text-dim); line-height:1.6; }
         .freelance-btn{ margin-top:20px; padding:12px 22px; font-size:11px; display:inline-block; }
 
-        @media (max-width:720px){
+        @media (max-width:900px){
           .freelance-plaque{ grid-template-columns:1fr; text-align:left; }
-          .freelance-media{ min-height:200px; }
+          .freelance-media{ min-height:220px; }
+        }
+
+        @media (max-width:640px){
+          .freelance-plaque{ padding:20px; gap:18px; }
+          .freelance-media{ min-height:180px; }
+          .freelance-body h3{ font-size:17px; }
+          .freelance-meta{ font-size:10px; line-height:1.6; }
+          .freelance-desc{ font-size:13px; margin-top:12px; }
+          .freelance-highlights{ padding-left:16px; }
+          .freelance-highlights li{ font-size:12.5px; }
+          .freelance-btn{ width:100%; text-align:center; }
         }
       `}</style>
     </section>
