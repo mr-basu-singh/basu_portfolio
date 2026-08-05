@@ -8,7 +8,7 @@ export default function ArchitectureSection() {
   return (
     <section id="architecture" ref={ref} className="section-shell arch-section">
       <div className="section-head">
-        <span className="section-num mono">07</span>
+        <span className="section-num mono">08</span>
         <h2 className="section-title reveal">A Real Example</h2>
         <div className="section-line" />
       </div>

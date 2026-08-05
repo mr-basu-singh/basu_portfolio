@@ -9,7 +9,7 @@ export default function WhyBuilt() {
   return (
     <section id="why-built" ref={ref} className="section-shell why-section">
       <div className="section-head">
-        <span className="section-num mono">05</span>
+        <span className="section-num mono">06</span>
         <h2 className="section-title reveal">Why I Built These Projects</h2>
         <div className="section-line" />
       </div>

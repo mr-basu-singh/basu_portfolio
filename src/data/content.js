@@ -69,7 +69,27 @@ export const expertise = [
   {
     key: 'tools',
     title: 'Dev Tools',
-    items: ['Git', 'GitHub', 'VS Code', 'Cursor', 'Claude Code', 'Docker', 'Postman'],
+    items: ['Git', 'GitHub', 'VS Code', 'Cursor', 'Claude Code', 'Docker', 'Postman', 'Vercel'],
+  },
+  {
+    key: 'orchestration',
+    title: 'AI Coding Assistants & Orchestration',
+    items: ['Claude Code', 'Cowork', 'Claude Design', 'MCP Servers', 'Plugin Marketplaces', 'Multi-turn AI Orchestration'],
+  },
+];
+
+export const freelanceWork = [
+  {
+    title: 'Mehfil Cafe — AI-Directed 3D Web Experience',
+    date: '08/2026',
+    tools: ['Claude Code', 'Cowork', 'Claude Design', 'MCP', 'Three.js', 'Vercel'],
+    link: 'https://mehfilcafe.vercel.app/',
+    image: '/images/mehfil-cafe.webp',
+    desc: "Owned end-to-end delivery of a scroll-driven 3D cafe website for a Delhi client — from product spec and AI-designed 3D furniture to a shipped, SEO-optimized site, directing Claude Code and Cowork through the full build.",
+    highlights: [
+      'Designed the 3D interior — furniture, lighting, and textures — and directed Claude Code to build it in Three.js for a photoreal cafe feel.',
+      'Cut mobile load time from ~4s to ~2s and fixed a GPU-memory crash by optimizing assets for real devices.',
+    ],
   },
 ];
 
@@ -253,8 +273,19 @@ export const resumeDoc = {
     { label: 'AI & Agent Frameworks', value: 'LangChain, LangGraph, Google ADK, CrewAI (Learning)' },
     { label: 'LLMs & AI Technologies', value: 'Generative AI, Agentic AI, Multi-Agent Systems, LLM Integration, Prompt Engineering, Tool Calling, Reasoning Workflows, Guardrails, OpenAI API, Groq API' },
     { label: 'RAG & Vector Databases', value: 'Retrieval-Augmented Generation (RAG), FAISS, ChromaDB, Embeddings, Sentence Transformers, Document Loaders, Text Splitters, Vector Databases, Tokenization' },
-    { label: 'Developer Tools', value: 'Git, GitHub, VS Code, Cursor, Postman, Docker' },
-    { label: 'AI Coding Assistants', value: 'Claude Code' },
+    { label: 'AI Coding Assistants & Orchestration', value: 'Claude Code, Cowork, Claude Design, MCP (Model Context Protocol) servers, plugin marketplaces, multi-turn AI orchestration' },
+    { label: 'Developer Tools', value: 'Git, GitHub, VS Code, Cursor, Postman, Docker, Vercel' },
+  ],
+  freelance: [
+    {
+      heading: 'Mehfil Cafe — AI-Directed 3D Web Experience | Claude Code, Cowork, Claude Design, MCP, Three.js, Vercel',
+      demo: 'mehfilcafe.vercel.app',
+      bullets: [
+        'Owned end-to-end delivery of a scroll-driven 3D cafe website for a Delhi client — authored the product spec, designed the 14-step camera narrative and section layout, chose the deployment stack, and orchestrated Claude Code + Cowork through multi-turn iteration to a shipped, SEO-optimised product.',
+        'Designed 3D furniture assets (bistro chair, cafe table, triangular-cage pendant lamp) in Claude Design, exported as GLB models, and directed Claude Code to integrate them into a Three.js interior with RoomEnvironment image-based lighting, procedurally-generated PBR wood/plaster textures, and warm point-light bloom for a photoreal cafe atmosphere.',
+        'Curated a project-specific AI toolchain — integrated 21st.dev MCP server for UI component intelligence, installed the ui-ux-pro-max plugin for design-token guidance, wrote task-specific system prompts — and directed Claude Code through performance and QA cycles that cut LCP from ~4s to ~2s on 4G (via a base64-blob-to-external-files refactor) and resolved a mobile GPU-memory crash at the menu step by tuning texture super-sampling and pixel ratio per device.',
+      ],
+    },
   ],
   projects: [
     {
@@ -273,15 +304,6 @@ export const resumeDoc = {
         'Architected a 3-node LangGraph workflow that dynamically extracts top 10 in-demand skills for target roles, integrating Tavily Search API to provide real-time, verified documentation links for each skill.',
         'Developed a structured roadmap generation engine that synthesizes role-specific learning paths, pro tips, and completion timelines, increasing user engagement by providing actionable, personalized career guidance.',
         'Automated the generation of branded, downloadable career roadmaps using ReportLab, reducing manual document creation time by 90%.',
-      ],
-    },
-    {
-      heading: 'AIForge: AI Evaluation & Agent Testing Platform | GitHub',
-      demo: 'Python, FastAPI, Streamlit, LLM APIs, Sentence Transformers, SQLAlchemy, Docker',
-      bullets: [
-        'Engineered a full-stack benchmarking platform evaluating 4 LLMs (Llama 3.3, Llama 3.1, Gemma 2, Qwen QwQ) against custom datasets, utilizing Sentence Transformer similarity and LLM-as-a-Judge metrics to optimize model selection for quality and cost-efficiency.',
-        'Implemented a custom hallucination detection system with a 0.4 similarity threshold, identifying Llama 3.3 as the optimal high-performance model (0.695 similarity / 7.4 judge score) while validating Llama 3.1 for 4.5× cost reduction in production.',
-        'Developed 15 REST API endpoints via FastAPI with Swagger documentation, backed by a SQLite/SQLAlchemy experiment-tracking system and Docker Compose deployment, validated with a 12-test unit test suite.',
       ],
     },
   ],

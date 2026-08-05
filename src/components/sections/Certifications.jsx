@@ -9,7 +9,7 @@ export default function Certifications() {
   return (
     <section id="certifications" ref={ref} className="section-shell tight cert-section">
       <div className="section-head">
-        <span className="section-num mono">08</span>
+        <span className="section-num mono">09</span>
         <h2 className="section-title reveal">Certifications &amp; Training</h2>
         <div className="section-line" />
       </div>

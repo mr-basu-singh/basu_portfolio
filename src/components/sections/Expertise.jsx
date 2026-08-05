@@ -9,6 +9,7 @@ const LABELS = {
   models: 'MODELS USED',
   data: 'RETRIEVAL LAYER',
   tools: 'DAILY TOOLS',
+  orchestration: 'AI TOOLCHAIN',
 };
 
 function SkillCard({ e, index, label, open, onEnter, onLeave, onClick }) {

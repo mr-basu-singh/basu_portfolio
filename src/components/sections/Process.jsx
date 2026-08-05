@@ -21,7 +21,7 @@ export default function Process() {
   return (
     <section id="process" ref={ref} className="section-shell process-section">
       <div className="section-head">
-        <span className="section-num mono">06</span>
+        <span className="section-num mono">07</span>
         <h2 className="section-title reveal">How I Build Before I Deploy</h2>
         <div className="section-line" />
       </div>

@@ -8,6 +8,7 @@ import Hero from './components/sections/Hero';
 import Stats from './components/sections/Stats';
 import About from './components/sections/About';
 import Expertise from './components/sections/Expertise';
+import FreelanceWork from './components/sections/FreelanceWork';
 import Projects from './components/sections/Projects';
 import WhyBuilt from './components/sections/WhyBuilt';
 import Process from './components/sections/Process';
@@ -41,6 +42,7 @@ export default function App() {
         <Stats />
         <About />
         <Expertise />
+        <FreelanceWork />
         <Projects />
         <WhyBuilt />
         <Process />

@@ -69,7 +69,7 @@ export default function Education() {
   return (
     <section id="education" ref={ref} className="section-shell tight edu-section">
       <div className="section-head">
-        <span className="section-num mono">09</span>
+        <span className="section-num mono">10</span>
         <h2 className="section-title reveal in">Education</h2>
         <div className="section-line" />
       </div>

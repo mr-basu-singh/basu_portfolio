@@ -22,6 +22,19 @@ function ResumeDocument({ compact = false }) {
         <p key={s.label} className="resume-doc-line"><strong>{s.label}</strong><br />{s.value}</p>
       ))}
 
+      <h3 className="resume-doc-h">Freelance Work (AI-Directed Delivery)</h3>
+      {resumeDoc.freelance.map((p) => (
+        <div key={p.heading} className="resume-doc-proj">
+          <div className="resume-doc-proj-head">
+            <strong>{p.heading}</strong>
+          </div>
+          {p.demo && <p className="resume-doc-demo">{p.demo}</p>}
+          <ul>
+            {p.bullets.map((b, i) => <li key={i}>{b}</li>)}
+          </ul>
+        </div>
+      ))}
+
       <h3 className="resume-doc-h">Projects</h3>
       {resumeDoc.projects.map((p) => (
         <div key={p.heading} className="resume-doc-proj">
@@ -149,7 +162,7 @@ export default function ResumeContact() {
   return (
     <section id="resume" ref={ref} className="section-shell tight resume-section">
       <div className="section-head">
-        <span className="section-num mono">10</span>
+        <span className="section-num mono">11</span>
         <h2 className="section-title reveal">Resume &amp; Contact</h2>
         <div className="section-line" />
       </div>
